@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class IncomeTax {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your salary " );
+        long amt = scanner.nextInt();
+
+        System.out.println("income tax is " +functionTaxCalculate(amt)+ "/-");
+    }
+
+    static double functionTaxCalculate(long n) {
+        double tax = 0;
+        if (n <= 50000)
+            tax = 0;
+        else if (n <= 60000)
+            tax = 0.1 * (n - 50000);
+        else if (n <= 150000)
+            tax = (0.2 * (n - 60000) + 1000);
+        else tax = (0.3 * (n - 150000) + 18000 + 1000);
+        return tax;
+    }
+}
